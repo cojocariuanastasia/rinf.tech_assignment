@@ -22,6 +22,7 @@ Fragrance Wardrobe is your personal fragrance advisor and collection manager. Ca
 - **Strict Formatting**: AI recommendations in standardized format: `'Brand' - 'Perfume Name'`
 - **Responsive Design**: Beautiful luxury-themed UI that adapts to all screen sizes
 
+
 ## Tech Stack
 
 ### Frontend
@@ -115,6 +116,7 @@ fragranceWardrobe/
 - Sort your collection by various criteria
 - View detailed fragrance information in separate pages
 
+
 ## API Endpoints - CRUD Operations
 
 ### Authentication
@@ -146,8 +148,28 @@ fragranceWardrobe/
 - **GitHub Copilot** (Claude Sonnet 4.6) - AI pair programmer used throughout development for code generation, debugging, and refactoring
 - **Google AI Studio** - Used to obtain and test the Gemini API key
 
+
 ## Technical Challenges
 
+### Gemini API Quota Limit Exceeded and Model Fallbacks
+
+While integrating the AI advisor and perfume suggestion features, Gemini requests would sometimes fail even though the API key and request structure were valid. The issue was that some configured Gemini models were unavailable for the current key or had exceeded their request quota limit, which caused the app to return a `"model not found/available"` style error.
+
+This made the failure misleading at first, because the problem was not the API integration itself, but the availability of a specific model at runtime. Some models returned quota-related or availability-related errors, while others remained usable.
+
+**Solution:** Instead of relying on a single Gemini model, the backend was updated to try a list of fallback models in sequence. If the preferred model (e.g. `"gemini-2.5-flash"`) failed due to quota or availability, the app automatically retried with spare supported models (e.g. `"gemini-2.0-flash", "gemini-1.5-latest", etc.`) before returning an error to the user. This made the AI features significantly more resilient and reduced unnecessary failures when one model temporarily became unavailable.
+
+
+### Prompt Engineering Fix: Inconsistent Recommendation Output
+
+Early AI responses were difficult to parse because recommendations were returned in inconsistent styles (extra commentary, mixed separators, or missing brand/perfume structure). This caused unstable UI behavior for suggestion rendering and follow-up matching against the perfume catalog.
+
+**Prompt engineering solution adopted:**
+- Added explicit output rules requiring a strict recommendation format: `'Brand' - 'Perfume Name'`.
+- Added negative constraints (no markdown, no extra prose, no invented fields outside the requested schema).
+- Added concise task framing with fragrance context so the model stayed on-domain and reduced drift.
+
+**Result:** AI responses became significantly more structured and predictable, which improved parsing reliability and reduced formatting-related suggestion errors.
 
 ---
 
