@@ -1,4 +1,5 @@
 # Fragrance Wardrobe
+Developed by Anastasia Cojocariu
 
 A full-stack web application for managing your personal fragrance collection with AI-powered recommendations and discovery.
 
