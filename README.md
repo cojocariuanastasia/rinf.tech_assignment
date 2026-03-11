@@ -43,6 +43,62 @@ The frontend will be available at `http://localhost:5173`
 - **pg** - PostgreSQL client for Node.js
 The backend will run on `http://localhost:5000`
 
+## Installation
+
+### Prerequisites
+- **Node.js** 14+ and npm
+- **PostgreSQL** 12+
+- **Google Gemini API Key** (from [Google AI Studio](https://aistudio.google.com))
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+```bash
+cd backend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Set up environment variables (create `.env` file):
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=fragrance_wardrobe
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+GEMINI_API_KEY=your_gemini_api_key
+NODE_ENV=development
+```
+
+4. Initialize the database:
+```bash
+npm run seed
+```
+
+5. Start the backend server:
+```bash
+npm start
+```
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
 
 ## Project Structure
 
