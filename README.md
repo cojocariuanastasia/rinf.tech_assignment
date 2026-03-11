@@ -12,7 +12,7 @@ Fragrance Wardrobe is your personal fragrance advisor and collection manager. Ca
 - **User Authentication**: Secure sign-up and login system with bcrypt password hashing
 - **Personal Collection**: Build and manage your fragrance collection with filtering and sorting
 - **AI Advisor**: Thread-based conversational chat with an 'intelligent' fragrance advisor
-- **Fragrance Discovery**: Browse and search through a comprehensive fragrance database, imported the Kaggle dataset: https://www.kaggle.com/datasets/olgagmiufana1/fragrantica-com-fragrance-dataset
+- **Fragrance Discovery**: Browse and search through a comprehensive fragrance database, imported from the Kaggle dataset: https://www.kaggle.com/datasets/olgagmiufana1/fragrantica-com-fragrance-dataset
 - **Smart Search**: Live search with dropdown suggestions and duplicate detection
 - **Direct Add**: Add fragrances from the collection page's library search directly to your wardrobe
 
