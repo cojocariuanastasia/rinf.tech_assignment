@@ -129,9 +129,9 @@ export default function EditProfilePage({ currentUser, onProfileUpdated = () => 
                   onChange={(e) => handleChange("gender_pref", e.target.value)}
                   className="w-full bg-transparent border-b border-perfume-gold/60 py-2 focus:outline-none"
                 >
-                  <option value="Female">Female</option>
-                  <option value="Male">Male</option>
-                  <option value="Unisex">Unisex</option>
+                 <option className="bg-perfume-black text-white" value="Female">Female</option>
+                  <option className="bg-perfume-black text-white" value="Male">Male</option>
+                  <option className="bg-perfume-black text-white" value="Unisex">Unisex</option>
                 </select>
               </div>
 
@@ -144,9 +144,9 @@ export default function EditProfilePage({ currentUser, onProfileUpdated = () => 
                   onChange={(e) => handleChange("budget_pref", e.target.value)}
                   className="w-full bg-transparent border-b border-perfume-gold/60 py-2 focus:outline-none"
                 >
-                  <option value="Affordable">Affordable</option>
-                  <option value="Mid-Range">Mid-Range</option>
-                  <option value="Luxury">Luxury</option>
+                  <option className="bg-perfume-black text-white" value="Affordable">Affordable</option>
+                  <option className="bg-perfume-black text-white" value="Mid-Range">Mid-Range</option>
+                  <option className="bg-perfume-black text-white" value="Luxury">Luxury</option>
                 </select>
               </div>
 
